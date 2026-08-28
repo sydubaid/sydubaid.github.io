@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Syed Ubaid — Backend Engineer</title>
+<meta name="description" content="Backend engineer building Java and Go systems: Spring Boot microservices, hybrid code retrieval with local inference, and an F1 telemetry replay engine.">
+
+<meta property="og:title" content="Syed Ubaid — Backend Engineer">
+<meta property="og:description" content="Backend engineer. Java and Go. Open to relocation: UAE, Saudi Arabia, Japan.">
+<meta property="og:type" content="profile">
+<!-- TODO: replace with your live URL once deployed -->
+<meta property="og:url" content="https://sydubaid.github.io/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap bar__inner">
+    <span class="bar__name">SYED UBAID</span>
+    <nav class="bar__nav" aria-label="Sections">
+      <a href="#work" data-i18n="nav.work">Projects</a>
+      <a href="#experience" data-i18n="nav.exp">Experience</a>
+      <a href="#creds" data-i18n="nav.creds">Credentials</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" class="is-on">EN</button>
+      <span class="lang__sep">/</span>
+      <button type="button" data-lang="ja">日本語</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ══ HERO ══ -->
+<section class="wrap hero">
+  <h1 class="hero__title">
+    <span data-i18n="hero.l1">Backend engineer.</span><br>
+    <span class="hero__accent" data-i18n="hero.l2">Java and Go.</span>
+  </h1>
+  <p class="hero__sub" data-i18n="hero.sub">I build backend systems that move data. At Cognizant, Spring Boot microservices. On my own time, hybrid code retrieval with cited answers from a local model, plus an F1 telemetry replay engine.</p>
+
+  <!-- Signature element: the status strip, read like a timing screen readout -->
+  <dl class="strip">
+    <div class="strip__row">
+      <dt data-i18n="strip.loc">Location</dt>
+      <dd data-i18n="strip.locv">Chennai, India</dd>
+    </div>
+    <div class="strip__row">
+      <dt data-i18n="strip.exp">Experience</dt>
+      <dd><span class="num">1</span><span data-i18n="strip.yr">yr</span> <span class="num">2</span><span data-i18n="strip.mo">mo</span> · Cognizant</dd>
+    </div>
+    <div class="strip__row strip__row--hot">
+      <dt data-i18n="strip.open">Open to</dt>
+      <dd data-i18n="strip.openv">Relocation — UAE · Saudi Arabia · Japan</dd>
+    </div>
+    <div class="strip__row">
+      <dt data-i18n="strip.stack">Core stack</dt>
+      <dd>Java 21 · Spring Boot · Go · PostgreSQL · AWS</dd>
+    </div>
+  </dl>
+
+  <div class="links">
+    <a class="btn btn--hot" href="Syed-Ubaid-Resume.pdf" data-i18n="cta.resume">Download résumé</a>
+    <a class="btn" href="https://github.com/sydubaid">GitHub</a>
+    <a class="btn" href="https://linkedin.com/in/devsyedubaid">LinkedIn</a>
+    <a class="btn" href="mailto:syedubaid479@gmail.com" data-i18n="cta.mail">Email</a>
+  </div>
+</section>
+
+<!-- ══ PROJECTS — the timing tower ══ -->
+<section class="wrap sec" id="work">
+  <h2 class="sec__h"><span data-i18n="sec.work">Projects</span></h2>
+
+  <article class="tow">
+    <div class="tow__head">
+      <span class="tow__pos">01</span>
+      <h3 class="tow__name">GP Replay</h3>
+      <span class="tow__tags">Java 21 · Spring Boot · WebSocket · React 19 · PostgreSQL · Python</span>
+    </div>
+    <div class="tow__body">
+      <p data-i18n="p1.what">Replays historical Formula 1 races through an interactive circuit map, a live timing tower and synchronised driver telemetry — speed, RPM, gear, throttle, brake, DRS — with playback from 1× to 40×.</p>
+      <p class="tow__call"><strong data-i18n="p1.dlab">The decision that mattered.</strong> <span data-i18n="p1.d">The replay service never rebuilds race state while streaming. A Python ETL precomputes one JSON snapshot every 200 ms into a <code>replay_ticks</code> table, so playback is an indexed range read and seeking stays predictable at any speed.</span></p>
+      <!-- TODO: export 2 frames from your LinkedIn post at 1600px wide, WebP, into assets/ -->
+      <figure class="shot">
+        <img src="assets/gp-replay-timing.webp"
+             alt="GP Replay interface showing the circuit map and live timing tower"
+             loading="lazy" width="1600" height="900"
+             onerror="this.closest('.shot').remove()">
+      </figure>
+      <a class="tow__link" href="https://github.com/sydubaid/gp-replay">github.com/sydubaid/gp-replay →</a>
+    </div>
+  </article>
+
+  <article class="tow">
+    <div class="tow__head">
+      <span class="tow__pos">02</span>
+      <h3 class="tow__name">AskMyRepo</h3>
+      <span class="tow__tags">Go · SQLite · Ollama · no CGO</span>
+    </div>
+    <div class="tow__body">
+      <p data-i18n="p2.what">Indexes a local repository into SQLite, retrieves relevant code by combining vector, keyword and identifier signals, and streams file-and-line-cited answers from a model running locally through Ollama.</p>
+      <p class="tow__call"><strong data-i18n="p2.dlab">The constraint that shaped it.</strong> <span data-i18n="p2.d">No Docker, no CGO, no framework, no external API — Go standard library and <code>modernc.org/sqlite</code> only. Incremental SHA-256 indexing re-embeds just the changed chunks; bounded worker pools keep local embedding from saturating the machine. Retrieval scores cosine similarity alongside keyword and identifier matching.</span></p>
+      <a class="tow__link" href="https://github.com/sydubaid/ask-my-repo">github.com/sydubaid/ask-my-repo →</a>
+    </div>
+  </article>
+</section>
+
+<!-- ══ EXPERIENCE ══ -->
+<section class="wrap sec" id="experience">
+  <h2 class="sec__h"><span data-i18n="sec.exp">Experience</span></h2>
+
+  <article class="job">
+    <div class="job__meta">
+      <span class="job__co">Cognizant</span>
+      <span class="job__when"><span data-i18n="job.d1">Jul 2025 — present</span></span>
+    </div>
+    <div class="job__body">
+      <h3 class="job__role"><span data-i18n="job.r1">Programmer Analyst</span> <span class="job__prev" data-i18n="job.r1p">(Programmer Analyst Trainee to Jul 2026)</span></h3>
+      <p data-i18n="job.b1">Full-Stack Java engineering track on an event management platform, working in Agile/Scrum.</p>
+      <ul>
+        <li data-i18n="job.b2">Decomposed the platform into three core Spring Boot services — Event, Ticketing, Notification — plus supporting auth and user services, so each deploys independently.</li>
+        <li data-i18n="job.b3">Inter-service calls through OpenFeign declarative clients, wrapped in Resilience4j circuit breakers to stop cascading failure.</li>
+        <li data-i18n="job.b4">JWT authentication with role-based access control across admin, organiser and attendee roles.</li>
+        <li data-i18n="job.b5">Centralised observability via Spring Boot Admin; APIs documented with OpenAPI. Unit and integration tests in JUnit 5 and Mockito.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- ══ CREDENTIALS ══ -->
+<section class="wrap sec" id="creds">
+  <h2 class="sec__h"><span data-i18n="sec.creds">Credentials</span></h2>
+
+  <ul class="cert">
+    <li>
+      <span class="cert__dot" aria-hidden="true"></span>
+      <span class="cert__name">Claude Certified Architect — Foundations</span>
+      <span class="cert__by">Anthropic</span>
+      <span class="cert__when">Apr 2026 → Apr 2027</span>
+      <!-- TODO: paste the real Credly URL (the lnkd.in link you posted resolves to it) -->
+      <a class="cert__v" href="#REPLACE_WITH_CREDLY_URL" data-i18n="cert.verify">Verify</a>
+    </li>
+    <li>
+      <span class="cert__dot" aria-hidden="true"></span>
+      <span class="cert__name">AWS Certified AI Practitioner</span>
+      <span class="cert__by">Amazon Web Services</span>
+      <span class="cert__when">2026</span>
+      <a class="cert__v" href="#REPLACE_WITH_CREDLY_URL" data-i18n="cert.verify">Verify</a>
+    </li>
+    <li>
+      <span class="cert__dot" aria-hidden="true"></span>
+      <span class="cert__name">Gemini Enterprise Agent Development</span>
+      <span class="cert__by">Google</span>
+      <span class="cert__when">Jun 2026 → Dec 2026</span>
+      <a class="cert__v" href="#REPLACE_WITH_CREDLY_URL" data-i18n="cert.verify">Verify</a>
+    </li>
+  </ul>
+
+  <p class="edu">
+    <span data-i18n="edu.deg">B.E. Computer Science</span> ·
+    <span data-i18n="edu.uni">Chandigarh University</span> ·
+    <span class="num">2021</span>–<span class="num">2025</span>
+  </p>
+</section>
+
+<!-- ══ STACK ══ -->
+<section class="wrap sec" id="stack">
+  <h2 class="sec__h"><span data-i18n="sec.stack">Stack</span></h2>
+  <dl class="grid">
+    <div><dt data-i18n="st.lang">Languages</dt><dd>Java 21, Go, Python, TypeScript, SQL</dd></div>
+    <div><dt data-i18n="st.back">Backend</dt><dd>Spring Boot, Spring Cloud, Spring Data JPA, Hibernate, WebSocket, OpenFeign, Resilience4j, JWT</dd></div>
+    <div><dt data-i18n="st.data">Data</dt><dd>PostgreSQL, MySQL, SQLite, JSONB, Flyway, Redis</dd></div>
+    <div><dt data-i18n="st.front">Frontend</dt><dd>React 19, Angular 19, Tailwind CSS, Vite</dd></div>
+    <div><dt data-i18n="st.infra">Cloud &amp; infra</dt><dd>AWS (EC2, S3, Lambda, IAM, Bedrock), Docker Compose, Linux, Maven, Git</dd></div>
+    <div><dt data-i18n="st.test">Testing</dt><dd>JUnit 5, Mockito, Testcontainers</dd></div>
+  </dl>
+</section>
+
+<!-- ══ JAPANESE — honest level disclosure ══ -->
+<section class="wrap sec sec--note" id="jp">
+  <h2 class="sec__h"><span data-i18n="sec.jp">Japanese</span></h2>
+  <p data-i18n="jp.body">Studying part-time. Currently around N5, working toward N3. The Japanese version of this page is my own writing, not machine translation. I mention the level plainly because I would rather be clear about it now than in an interview.</p>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="wrap sec" id="contact">
+  <h2 class="sec__h"><span data-i18n="sec.contact">Contact</span></h2>
+  <p class="contact">
+    <a href="mailto:syedubaid479@gmail.com">syedubaid479@gmail.com</a>
+  </p>
+  <p class="contact__note" data-i18n="contact.note">Open to backend and full-stack roles in the UAE, Saudi Arabia, Japan and India. Happy to talk through either project in detail.</p>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+  <span>© <span class="num">2026</span> Syed Ubaid</span>
+  <span class="foot__src"><a href="https://github.com/sydubaid/sydubaid.github.io" data-i18n="foot.src">Source</a></span>
+</footer>
+
+<script src="assets/i18n.js"></script>
+</body>
+</html>
